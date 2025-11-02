@@ -1,4 +1,4 @@
-from src.repositories.users import UserRepository
+from src.repositories.organizations import OrganizationsRepository
 
 
 class DBManager:
@@ -8,7 +8,7 @@ class DBManager:
     async def __aenter__(self):
         self.session = self.session_factory()
 
-        self.users = UserRepository(self.session)
+        self.organizations = OrganizationsRepository(self.session)
 
         return self
 
